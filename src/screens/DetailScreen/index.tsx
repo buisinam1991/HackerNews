@@ -94,7 +94,7 @@ const DetailsScreen = ({ route }: { route: any }) => {
               </View>
             </>
           }
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item) => item?.id?.toString()}
           renderItem={renderItem}
           onEndReached={loadMoreComments}
           onEndReachedThreshold={0.5}

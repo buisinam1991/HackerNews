@@ -9,22 +9,22 @@ interface PostItemProps {
 
 const PostItem: React.FC<PostItemProps> = ({ item, onPress }) => (
   <TouchableOpacity onPress={() => onPress()} style={styles.itemContainer}>
-    
     <View style={styles.detailsContainer}>
-      <Text style={styles.title}>{item.title}</Text>
+      <>{!item?.title && console.log(item)}</>
+      <Text style={styles.title}>{item?.title}</Text>
       {/* <Text style={styles.url}>{new URL(item.url).hostname}</Text> */}
       <View style={styles.metaContainer}>
       <View style={styles.scoreContainer}>
-        <Text style={styles.score}>{item.score}</Text>
+        <Text style={styles.score}>{item?.score}</Text>
       </View>
-        <Text style={styles.metaText}>by {item.by}</Text>
+        <Text style={styles.metaText}>by {item?.by}</Text>
         <Text style={styles.metaText}>|</Text>
-        <Text style={styles.metaText}>{new Date(item.time * 1000).toLocaleTimeString()}</Text>
+        <Text style={styles.metaText}>{new Date(item?.time * 1000).toLocaleTimeString()}</Text>
       </View>
     </View>
     <ImageBackground style={styles.commentContainer} source={require('../../images/ic_comment.png')}
       resizeMode="contain">
-      <Text style={styles.commentCount}>{item.kids ? item.kids.length : 0}</Text>
+      <Text style={styles.commentCount}>{item?.kids ? item.kids.length : 0}</Text>
     </ImageBackground>
   </TouchableOpacity>
 );

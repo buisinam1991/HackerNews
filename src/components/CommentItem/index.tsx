@@ -15,10 +15,10 @@ const CommentItem: React.FC<CommentItemProps> = ({ comment }) => {
   const [loadingSubcomments, setLoadingSubcomments] = useState(false);
 
   useEffect(() => {
-    if (comment.kids && comment.kids.length > 0) {
-      fetchSubcomments(comment.kids);
+    if (comment?.kids && comment?.kids?.length > 0) {
+      fetchSubcomments(comment!!.kids);
     }
-  }, [comment.kids]);
+  }, [comment?.kids]);
 
   const fetchSubcomments = async (commentIds: number[]) => {
     setLoadingSubcomments(true);
@@ -36,26 +36,26 @@ const CommentItem: React.FC<CommentItemProps> = ({ comment }) => {
   };
 
   return (
-    <View style={[styles.commentContainer,(comment.kids && comment.kids.length > 0) && {borderWidth: 1,
+    <View style={[styles.commentContainer,(comment?.kids && comment?.kids?.length > 0) && {borderWidth: 1,
       borderColor: '#ddd'}]}>
       <View style={styles.commentHeader}>
         {/* Replace 'userAvatar' with actual avatar URL if available */}
         {/* <Image source={{ uri: 'userAvatar' }} style={styles.avatar} /> */}
-        <Text style={styles.username}>{comment.by}</Text>
-        <Text style={styles.time}>{new Date(comment.time * 1000).toLocaleString()}</Text>
+        <Text style={styles.username}>{comment?.by}</Text>
+        <Text style={styles.time}>{new Date(comment?.time * 1000).toLocaleString()}</Text>
       </View>
       <View style={styles.commentBody}>
-        <RenderHtml contentWidth={width} source={{ html: comment.text }} />
+        <RenderHtml contentWidth={width} source={{ html: comment?.text }} />
       </View>
       <View style={styles.commentFooter}>
-        {comment.kids?.length!! > 0 && <Text style={styles.vote}>^ {comment.kids ? comment.kids.length : 0}</Text>}
+        {comment?.kids?.length!! > 0 && <Text style={styles.vote}>^ {comment?.kids ? comment!!.kids?.length : 0}</Text>}
         <Text style={styles.reply}>Reply</Text>
         <Text style={styles.report}>Report</Text>
       </View>
       {loadingSubcomments ? (
         <ActivityIndicator size="small" color="#0000ff" />
       ) : (
-        subcomments.map((subcomment) => <CommentItem key={subcomment.id} comment={subcomment} />)
+        subcomments.map((subcomment) => <CommentItem key={subcomment?.id} comment={subcomment} />)
       )}
     </View>
   );

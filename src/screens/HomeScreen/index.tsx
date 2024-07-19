@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, ActivityIndicator, StyleSheet, Dimensions, SafeAreaView } from 'react-native';
+import { FlatList, StyleSheet, Dimensions, SafeAreaView } from 'react-native';
 import axios from 'axios';
 import SegmentedControl from '@react-native-segmented-control/segmented-control';
 import { useNavigation } from '@react-navigation/native';
@@ -55,7 +55,7 @@ const HomeScreen = () => {
     setStories([]);
   };
 
-  const renderItem = ({ item }: { item: Story }) => <PostItem item={item} onPress={() => navigation.navigate('Details', { item })} key={item.id.toString()}/>
+  const renderItem = ({ item }: { item: Story }) => <PostItem item={item} onPress={() => navigation.navigate('Details', { item })} key={item?.id?.toString()}/>
   
   const renderSkeletonItem = () => (
     <>
@@ -87,7 +87,7 @@ const HomeScreen = () => {
       ) : (
         <FlatList
           data={stories}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item) => item?.id?.toString()}
           renderItem={renderItem}
           onEndReached={loadMoreStories}
           onEndReachedThreshold={0.5}
