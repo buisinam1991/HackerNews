@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { Story } from '../../types';
 import PostItem from '../../components/PostItem';
+import Colors from '../../constant';
 
 const PAGE_NUM = 10;
 
@@ -77,7 +78,9 @@ const HomeScreen = () => {
         values={['New', 'Best', 'Top']}
         selectedIndex={segmentIndex}
         onChange={(event) => handleSegmentChange(event.nativeEvent.selectedSegmentIndex)}
-        style={{ margin: 10 }}
+        style={{ margin: 10}}
+        tintColor="white"
+        fontStyle={{color: Colors.mainColor}}
       />
       {loading ? (
         renderSkeletonItem()
@@ -89,6 +92,7 @@ const HomeScreen = () => {
           onEndReached={loadMoreStories}
           onEndReachedThreshold={0.5}
           ListFooterComponent={renderFooter}
+          showsVerticalScrollIndicator={false}
         />
       )}
     </SafeAreaView>

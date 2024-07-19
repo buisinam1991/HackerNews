@@ -99,6 +99,7 @@ const DetailsScreen = ({ route }: { route: any }) => {
           onEndReached={loadMoreComments}
           onEndReachedThreshold={0.5}
           ListFooterComponent={renderFooter}
+          showsVerticalScrollIndicator={false}
         />
     </ScrollView>
   );

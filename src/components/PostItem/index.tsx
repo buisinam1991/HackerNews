@@ -1,5 +1,6 @@
 import { TouchableOpacity, View, Text, StyleSheet, ImageBackground } from "react-native";
 import { Story } from "../../types";
+import Colors from "../../constant";
 
 interface PostItemProps {
   item: Story;
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 50,
     marginRight: 10,
-    backgroundColor: "#ff6600"
+    backgroundColor: Colors.mainColor
   },
   score: {
     fontSize: 8,
