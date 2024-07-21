@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Dimensions, Linking, ScrollView } from 'react-native';
-import axios from 'axios';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { Comment } from '../../types';
 import CommentItem from '../../components/CommentItem';
 import RenderHtml from 'react-native-render-html';
+import { fetchComments } from '../../api';
 
 const { width } = Dimensions.get('window');
+const PAGE_NUM = 10;
 
 const DetailsScreen = ({ route }: { route: any }) => {
   const { item } = route.params;
@@ -15,24 +16,17 @@ const DetailsScreen = ({ route }: { route: any }) => {
   const [loadingMore, setLoadingMore] = useState(false);
   const [page, setPage] = useState(1);
 
-  const PAGE_NUM = 10;
-
   useEffect(() => {
-    fetchComments(item.kids || [], page);
+    fetchCommentsData(item.kids || [], page);
   }, [item, page]);
 
-  const fetchComments = async (commentIds: number[], page: number) => {
+  const fetchCommentsData = async (commentIds: number[], page: number) => {
     setLoading(page === 1);
     setLoadingMore(page !== 1);
     try {
-      const start = (page - 1) * PAGE_NUM;
-      const end = page * PAGE_NUM;
-      const commentPromises = commentIds.slice(start, end).map((id) =>
-        axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-      );
-      const commentResponses = await Promise.all(commentPromises);
+      const fetchedComments = await fetchComments(commentIds, page, PAGE_NUM);
       setComments((prevComments) =>
-        page === 1 ? commentResponses.map((res) => res.data) : [...prevComments, ...commentResponses.map((res) => res.data)]
+        page === 1 ? fetchedComments : [...prevComments, ...fetchedComments]
       );
     } catch (error) {
       console.error(error);
