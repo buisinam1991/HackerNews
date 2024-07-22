@@ -54,5 +54,5 @@ This is one way to run your app — you can also run it directly from within And
 
 ## Step : Screenshots
 
-![ScreenShot](https://github.com/buisinam/HackerNews/blob/Assignment/screenshots/ios_home.png)
-![ScreenShot](https://github.com/buisinam/HackerNews/Assignment/screenshots/ios_detail.png)
+[<img src="/screenshots/ios_home.png" width="200" hspace="10" vspace="10">]()
+[<img src="screenshots/ios_detail.png" width="200" hspace="10" vspace="10">]()
