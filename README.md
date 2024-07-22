@@ -56,13 +56,14 @@ This is one way to run your app — you can also run it directly from within And
 
     1. #### List Top, New, Best stories
         HomePage with list stories
-    
-        [<img src="/screenshots/ios_detail.png" width="200" hspace="10" vspace="10">](url)
+        
+<img width="375" alt="ios-home" src="https://github.com/user-attachments/assets/ca495e9f-c42c-402a-af2f-c5f9e7440a01">
+
     
     2. #### Detail stories
         DetailPage show story's content and comments
         
-        [<img src="/screenshots/ios_detail.png" width="200" hspace="10" vspace="10">]()
+<img width="375" alt="ios-detail" src="https://github.com/user-attachments/assets/a1c0d4d2-a534-49d1-965d-1fb3b3b1ee48">
 
    
 ### Download<a id='download'></a>
