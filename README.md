@@ -54,5 +54,17 @@ This is one way to run your app — you can also run it directly from within And
 
 ## Step : Screenshots
 
-[<img src="/screenshots/ios_home.png" width="200" hspace="10" vspace="10">]()
-[<img src="screenshots/ios_detail.png" width="200" hspace="10" vspace="10">]()
+1. #### List Top, New, Best stories
+    HomePage with list stories
+
+    [<img src="/screenshots/ios_home.png" width="200" hspace="10" vspace="10">]()
+
+2. #### Detail stories
+    DetailPage show story's content and comments
+    
+    [<img src="/screenshots/ios_detail.png" width="200" hspace="10" vspace="10">]()
+
+
+## Download<a id='download'></a>
+
+    You can directly download HackerNews from <a href="https://github.com/buisinam/HackerNews/releases/hackernews.apk">here</a>
