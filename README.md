@@ -52,19 +52,19 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-## Step : Screenshots
+### Step : Screenshots
 
-1. #### List Top, New, Best stories
-    HomePage with list stories
-
-    [<img src="/screenshots/ios_home.png" width="200" hspace="10" vspace="10">]()
-
-2. #### Detail stories
-    DetailPage show story's content and comments
+    1. #### List Top, New, Best stories
+        HomePage with list stories
     
-    [<img src="/screenshots/ios_detail.png" width="200" hspace="10" vspace="10">]()
+        [<img src="/screenshots/ios_detail.png" width="200" hspace="10" vspace="10">](url)
+    
+    2. #### Detail stories
+        DetailPage show story's content and comments
+        
+        [<img src="/screenshots/ios_detail.png" width="200" hspace="10" vspace="10">]()
 
+   
+### Download<a id='download'></a>
 
-## Download<a id='download'></a>
-
-    You can directly download HackerNews from <a href="https://github.com/buisinam/HackerNews/releases/hackernews.apk">here</a>
+You can directly download HackerNews version Android from <a href="https://github.com/buisinam/HackerNews/releases/hackernews.apk">here</a>
