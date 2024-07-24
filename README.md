@@ -68,4 +68,4 @@ This is one way to run your app — you can also run it directly from within And
    
 ### Download<a id='download'></a>
 
-You can directly download HackerNews version Android from <a href="https://github.com/buisinam/HackerNews/releases/hackernews.apk">here</a>
+You can directly download HackerNews version Android from <a href="https://github.com/buisinam1991/HackerNews/releases/hackernews.apk">here</a>
